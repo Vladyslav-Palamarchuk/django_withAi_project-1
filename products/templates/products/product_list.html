@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="row">
+    <h1 class="mb-4 text-center">Наші товари</h1>
+
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-primary">{{ product.title }}</h5>
+                <p class="card-text text-muted">{{ product.description|truncatewords:15 }}</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="badge bg-success p-2">{{ product.price }} грн</span>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Детальніше</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info text-center">Товарів поки немає.</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
