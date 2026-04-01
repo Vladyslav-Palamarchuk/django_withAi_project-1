@@ -13,7 +13,8 @@
                 <p class="card-text text-muted">{{ product.description|truncatewords:15 }}</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <span class="badge bg-success p-2">{{ product.price }} грн</span>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Детальніше</a>
+                    <a href="{% url 'product-detail' product.pk %}" class="btn btn-outline-primary
+                    btn-sm">Детальніше</a>
                 </div>
             </div>
         </div>
