@@ -11,6 +11,9 @@
             <div class="card-body">
                 <h5 class="card-title text-primary">{{ product.title }}</h5>
                 <p class="card-text text-muted">{{ product.description|truncatewords:15 }}</p>
+                {% if product.ai_description %}
+                    <p class="card-text small text-info">✨ AI: {{ product.ai_description }}</p>
+                {% endif %}
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <span class="badge bg-success p-2">{{ product.price }} грн</span>
                     <a href="{% url 'product-detail' product.pk %}" class="btn btn-outline-primary
