@@ -9,6 +9,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='products/', blank=True, null=True)
     ai_description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
     def __str__(self):
